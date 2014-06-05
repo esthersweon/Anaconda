@@ -1,4 +1,4 @@
-(function(root) {
+(function (root) {
 	var AG = root.AG = (root.AG || {});
 
 	var Coord = AG.Coord = function(x, y) {
@@ -7,7 +7,7 @@
 	};
 
 	Coord.prototype.plus = function(new_coord) {
-		return new Coord(this.x + new_coord.x, this.y + new_coord.y)
+		return new Coord(this.x + new_coord.x, this.y + new_coord.y);
 	};
 
 	var Anaconda = AG.Anaconda = function(board) {
@@ -25,18 +25,18 @@
 	    "L": new Coord(0, -1)
   	};
 
-  	Anaconda.SYMBOL = "A"
+  	Anaconda.SYMBOL = "A";
 
 	Anaconda.prototype.move = function() {
 		var anaconda = this;
 		var head = _(this.segments).last();
-		var new_head = head.plus(Anacaonda.DIFFS[this.dir]);
+		var new_head_coord = head.plus(Anaconda.DIFFS[this.dir]);
 
-		if (anaconda.eatsMouse(new_head)) {
+		if (anaconda.eatsMouse(new_head_coord)) {
 			anaconda.segments.push(head.plus(Anaconda.DIFFS[this.dir]));
 			this.board.mouse.replace();
-		} else if (this.board.validMove(new_head)) {
-			anaconda.segments.push(head.plus(Anaconda.DIFFS[thisdir]));
+		} else if (this.board.validMove(new_head_coord)) {
+			anaconda.segments.push(head.plus(Anaconda.DIFFS[this.dir]));
 			anaconda.segments.shift();
 		} else {
 			anaconda.segments = [];
@@ -49,6 +49,10 @@
 	};
 
 	Anaconda.prototype.turn = function(dir) {
+		//add inability for anaconda to turn on itself
+		if (this.dir==="U" && dir==="D") {
+
+		}
 		this.dir = dir;
 	};
 
@@ -70,14 +74,14 @@
 		});
 	};
 
-	Board.prototype.validMove = function(coordinate) {
+	Board.prototype.validMove = function(new_head_coord) {
 		var onBoard = (
-			(coordinate.x >= 0) && (coordinate.x <= (dimension-1)) && 
-			(coordinate.y >= 0) && (coordinate.y <= (dimension-1))
+			(new_head_coord.x >= 0) && (new_head_coord.x <= (this.dimension-1)) && 
+			(new_head_coord.y >= 0) && (new_head_coord.y <= (this.dimension-1))
 			);
 
 		var clearCell = _(this.anaconda.segments).every(function(segment) {
-			return (coordinate.x !== segment.x) || (coordinate.y !== seg.y);
+			return (new_head_coord.x !== segment.x) || (new_head_coord.y !== segment.y);
 		});
 
 		return onBoard && clearCell;
