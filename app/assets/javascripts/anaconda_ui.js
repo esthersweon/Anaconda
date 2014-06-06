@@ -65,7 +65,7 @@
 	};
 
 	View.prototype.start = function () {
-		this.board = new AG.Board(30);
+		this.board = new AG.Board(20);
 
 		$(window).keydown(this.handleKeyEvent.bind(this));
 
