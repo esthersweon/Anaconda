@@ -50,10 +50,13 @@
 
 	Anaconda.prototype.turn = function(dir) {
 		//add inability for anaconda to turn on itself
-		if (this.dir==="U" && dir==="D") {
-
+		if ((this.segments.length != 1) && ((this.dir==="U" && dir==="D") || (this.dir==="D" && dir==="U"))) {
+			this.dir = this.dir;
+		} else if ((this.segments.length != 1) && ((this.dir==="L" && dir==="R") || (this.dir==="R" && dir==="L"))) {
+			this.dir = this.dir;
+		} else {
+			this.dir = dir;
 		}
-		this.dir = dir;
 	};
 
 	var Board = AG.Board = function(dimension) {

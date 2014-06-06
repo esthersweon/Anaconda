@@ -14,7 +14,7 @@
 		40: "D"
 	};
 
-	View.STEP_INTERVAL = 10;
+	View.STEP_INTERVAL = 100;
 
 	View.prototype.handleKeyEvent = function (event) {
 		if (_(View.KEYS).has(event.keyCode)) {
