@@ -1,5 +1,5 @@
 #container {
-  padding-top: 50px;
+  padding-top: 100px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: auto;
@@ -10,7 +10,7 @@
 #score {
   text-align: center;
   color: white;
-  font-size: 30px;
+  font-size: 60px;
   font-family: "Times New Roman", Times, sans-serif;
 }
 
@@ -20,7 +20,7 @@
   margin-left: auto;
   margin-right: auto;
   background: black;
-  border: dashed white 1px;
+  border: solid white 1px;
 }
 
 .cell {

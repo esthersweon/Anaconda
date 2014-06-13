@@ -55,7 +55,6 @@
 		});
 
 		this.$scoreEl.empty();
-		this.$scoreEl.append("score || ");
 		this.$scoreEl.append(this.board.anaconda.segments.length);
 	};
 
@@ -65,7 +64,7 @@
 			this.render();
 		} else {
 			var score = this.board.anaconda.segments.length - 1
-			alert("You lose! SCORE: " + score);
+			alert("FINAL SCORE: " + score);
 			window.clearInterval(this.intervalID);
 		};
 		
