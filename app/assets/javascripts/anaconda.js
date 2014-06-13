@@ -39,7 +39,7 @@
 			anaconda.segments.push(head.plus(Anaconda.DIFFS[this.dir]));
 			anaconda.segments.shift();
 		} else {
-			anaconda.segments = [];
+			anaconda.segments.push("lost");
 		}
 	};
 

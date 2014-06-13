@@ -1,8 +1,9 @@
 (function (root) {
 	var AG = root.AG = (root.AG || {});
 
-	var View = AG.View = function ($el) {
+	var View = AG.View = function ($el, $scoreEl) {
 		this.$el = $el;
+		this.$scoreEl = $scoreEl;
 		this.board = null; 
 		this.intervalID = null;
 	};
@@ -52,16 +53,22 @@
 			});
 			view.$el.append($rowEl);
 		});
+
+		this.$scoreEl.empty();
+		this.$scoreEl.append("score || ");
+		this.$scoreEl.append(this.board.anaconda.segments.length);
 	};
 
 	View.prototype.step = function () {
-		if (_(this.board.anaconda.segments).last()) {
+		if (_(this.board.anaconda.segments).last() != "lost") {
 			this.board.anaconda.move();
 			this.render();
 		} else {
-			alert("You lose!");
+			var score = this.board.anaconda.segments.length - 1
+			alert("You lose! SCORE: " + score);
 			window.clearInterval(this.intervalID);
-		}
+		};
+		
 	};
 
 	View.prototype.start = function () {

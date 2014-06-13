@@ -1,26 +1,33 @@
 #container {
-	width: 700px;
-	height: 7000px;
   padding-top: 50px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: auto;
 	margin-bottom: auto;
+  background-color: black;
+}
+
+#score {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  font-family: "Times New Roman", Times, sans-serif;
 }
 
 #board {
-  width: 800px;
+  width: 560px;
+  height: 560px;
   margin-left: auto;
   margin-right: auto;
+  background: black;
+  border: dashed white 1px;
 }
 
 .cell {
   float: left;
   height: 28px;
   width: 28px;
-  background: #eee;
-
-  border: solid gray 1px;
+  background: black;
 }
 
 .anaconda {
@@ -28,9 +35,13 @@
 }
 
 .mouse {
-  background-color: gray;
+  background-color: red;
 }
 
 .row {
   clear: both;
+}
+
+html {
+  background-color: black;
 }

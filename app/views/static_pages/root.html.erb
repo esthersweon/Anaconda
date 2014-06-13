@@ -13,13 +13,29 @@
   </head>
 
   <body>
+
+    <script>
+      
+    </script>
+
     <div id="container">
       <div id="board">
       </div>
+
+      <br><br>
+      <div id="score">
+      </div>
     </div>
 
+    
+
+
     <script>
-      $(function () { new AG.View($("#board")).start(); });
+      $(function () { 
+        new AG.View($("#board"), $("#score")).start();
+      });
     </script>
+
+
   </body>
 </html>
