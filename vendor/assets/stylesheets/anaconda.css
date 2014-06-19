@@ -10,28 +10,20 @@
 #score {
   text-align: center;
   color: white;
-  font-size: 60px;
-  font-family: "Times New Roman", Times, sans-serif;
+  font-size: 50px;
+  font-family: "montserratbold", sans-serif;
 }
 
 #board {
   text-align: center;
-  color: white;
-  font-size: 60px;
-  font-family: "Times New Roman", Times, sans-serif;
+  font-size: 80px;
+  font-family: "montserratbold", sans-serif;
   width: 560px;
   height: 560px;
   margin-left: auto;
   margin-right: auto;
   background: black;
   border: solid white 1px;
-}
-
-#top-score {
-  text-align: center;
-  color: white;
-  font-size: 60px;
-  font-family: "Times New Roman", Times, sans-serif;
 }
 
 .cell {
@@ -51,6 +43,10 @@
 
 .row {
   clear: both;
+}
+
+a:visited {
+  color:white;
 }
 
 html {

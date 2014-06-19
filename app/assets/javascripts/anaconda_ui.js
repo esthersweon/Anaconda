@@ -69,9 +69,12 @@
 			this.$el.empty();
 			this.$scoreEl.empty();
 			this.$scoreEl.append('<a href="http://www.anacondaonline.us">play again</a>')
-			var finalScore = $('<div><br><br><br></div>')
-			this.$el.append(finalScore);
-			this.$el.append("FINAL SCORE: " + score);
+			var space = $('<div><br><br></div>');
+			this.$el.css("background-color", "white");
+			this.$el.append(space);
+			space.append('<img src="images/gameover.jpg"></img><br>');
+			space.append('<img src="images/finalscore.jpg"></img>');
+			space.append(score);
 		};
 	};
 
