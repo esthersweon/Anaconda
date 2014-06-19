@@ -63,11 +63,16 @@
 			this.board.anaconda.move();
 			this.render();
 		} else {
-			var score = this.board.anaconda.segments.length - 1
-			alert("FINAL SCORE: " + score);
+			var score = this.board.anaconda.segments.length - 1;
+
 			window.clearInterval(this.intervalID);
+			this.$el.empty();
+			this.$scoreEl.empty();
+			this.$scoreEl.append('<a href="http://www.anacondaonline.us">play again</a>')
+			var finalScore = $('<div><br><br><br></div>')
+			this.$el.append(finalScore);
+			this.$el.append("FINAL SCORE: " + score);
 		};
-		
 	};
 
 	View.prototype.start = function () {

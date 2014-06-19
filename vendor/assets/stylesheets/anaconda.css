@@ -1,5 +1,5 @@
 #container {
-  padding-top: 100px;
+  padding-top: 35px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: auto;
@@ -15,12 +15,23 @@
 }
 
 #board {
+  text-align: center;
+  color: white;
+  font-size: 60px;
+  font-family: "Times New Roman", Times, sans-serif;
   width: 560px;
   height: 560px;
   margin-left: auto;
   margin-right: auto;
   background: black;
   border: solid white 1px;
+}
+
+#top-score {
+  text-align: center;
+  color: white;
+  font-size: 60px;
+  font-family: "Times New Roman", Times, sans-serif;
 }
 
 .cell {
